@@ -1,4 +1,4 @@
-#CaloCalc
+# CaloCalc
 Managing weight is not always easy. But being able to track your calories **should be**. 
 There are apps that solve that problem. However they don't do it without stashing away some of the most helpful features behind a paywall. 
 **CaloCalc** aims to provide as much functionality **free of cost** to make reaching your goals as easy as possible. 
