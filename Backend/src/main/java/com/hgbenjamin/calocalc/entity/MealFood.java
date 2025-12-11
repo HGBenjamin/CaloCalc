@@ -25,12 +25,71 @@ public class MealFood {
     
     private LocalTime mealTime;
     private Double quantity; // servings eaten
+    private Double mealCalories;
 
     public MealFood()
     {
         
     }
-    
-    // Getters and Setters
+
+    public Long getMealFoodId()
+    {
+        return mealFoodId;
+    }
+
+    public void setMealFoodId(Long mealFoodId)
+    {
+        this.mealFoodId = mealFoodId;
+    }
+
+    public Meal getMeal()
+    {
+        return meal;
+    }
+
+    public void setMeal(Meal meal)
+    {
+        this.meal = meal;
+    }
+
+    public Food getFood()
+    {
+        return food;
+    }
+
+    public void setFood(Food food)
+    {
+        this.food = food;
+    }
+
+    public LocalTime getMealTime()
+    {
+        return mealTime;
+    }
+
+    public void setMealTime(LocalTime mealTime)
+    {
+        this.mealTime = mealTime;
+    }
+
+    public Double getQuantity()
+    {
+        return quantity;
+    }
+
+    public void setQuantity(Double quantity)
+    {
+        this.quantity = quantity;
+    }
+
+    public Double getMealCalories()
+    {
+        return mealCalories;
+    }
+
+    public void setMealCalories(Double mealCalories)
+    {
+        this.mealCalories = mealCalories;
+    }
 }
 

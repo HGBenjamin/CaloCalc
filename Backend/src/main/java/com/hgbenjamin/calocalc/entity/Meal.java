@@ -26,13 +26,71 @@ public class Meal
     
     // Something like Breakfast, Lunch, Dinner, Meal 4, Meal 5, etc.
     private String mealType;
-    private double totalCalories;
+    private Double totalCalories;
     private LocalDate date;
     
     public Meal()
     {
         
     }
-    
-    // Getters and Setters
+
+    public Long getMealId()
+    {
+        return mealId;
+    }
+
+    public void setMealId(Long mealId)
+    {
+        this.mealId = mealId;
+    }
+
+    public User getUser()
+    {
+        return user;
+    }
+
+    public void setUser(User user)
+    {
+        this.user = user;
+    }
+
+    public List<MealFood> getMealFoods()
+    {
+        return mealFoods;
+    }
+
+    public void setMealFoods(List<MealFood> mealFoods)
+    {
+        this.mealFoods = mealFoods;
+    }
+
+    public String getMealType()
+    {
+        return mealType;
+    }
+
+    public void setMealType(String mealType)
+    {
+        this.mealType = mealType;
+    }
+
+    public Double getTotalCalories()
+    {
+        return totalCalories;
+    }
+
+    public void setTotalCalories(Double totalCalories)
+    {
+        this.totalCalories = totalCalories;
+    }
+
+    public LocalDate getDate()
+    {
+        return date;
+    }
+
+    public void setDate(LocalDate date)
+    {
+        this.date = date;
+    }
 }
