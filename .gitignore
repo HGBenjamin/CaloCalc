@@ -1,4 +1,4 @@
 .DS_Store
-/Backend/.env
-/Backend/target/
-/Frontend/Desktop/node_modules
+/backend/.env
+/backend/target/
+/frontend/Desktop/node_modules
