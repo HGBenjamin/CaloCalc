@@ -21,4 +21,23 @@ public enum LengthUnit
         this.toCentimeterRatio = toCentimeterRatio;
         this.abbreviation = abbreviation;
     }
+    
+    /**
+     * Converts a value from one unit to another.
+     * Logic: (Value * SourceRatio) / TargetRatio
+     * @param value the value of the current unit.
+     * @param sourceUnit unit to convert from.
+     * @param targetUnit unit to convert to.
+     * @return the target unit.
+     */
+    public static double convert(double value, LengthUnit sourceUnit, LengthUnit targetUnit) 
+    {
+        if (sourceUnit == targetUnit) return value;
+        
+        // Step 1: Convert source to centimeters
+        double inCentimeters = value * sourceUnit.toCentimeterRatio;
+        
+        // Step 2: Convert centimeters to target unit
+        return inCentimeters / targetUnit.toCentimeterRatio;
+    }
 }

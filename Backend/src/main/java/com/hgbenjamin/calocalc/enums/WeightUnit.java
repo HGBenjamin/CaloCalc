@@ -18,4 +18,14 @@ public enum WeightUnit
         this.toGramRatio = toGramRatio;
         this.abbreviation = abbreviation;
     }
+
+    public double getToGramRatio()
+    {
+        return toGramRatio;
+    }
+
+    public String getAbbreviation()
+    {
+        return abbreviation;
+    }
 }

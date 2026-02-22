@@ -17,4 +17,14 @@ public enum Sex
         this.abbreviation = abbreviation;
         this.displayLabel = displayLabel;
     }
+
+    public String getAbbreviation()
+    {
+        return abbreviation;
+    }
+
+    public String getDisplayLabel()
+    {
+        return displayLabel;
+    }
 }
