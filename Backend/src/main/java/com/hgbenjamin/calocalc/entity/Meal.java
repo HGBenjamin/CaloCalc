@@ -24,9 +24,13 @@ public class Meal
     @OneToMany(mappedBy = "meal", cascade = CascadeType.ALL)
     private List<MealFood> mealFoods;
     
-    // Something like Breakfast, Lunch, Dinner, Meal 4, Meal 5, etc.
-    private String mealType;
-    private Double totalCalories;
+    @ManyToOne
+    @JoinColumn(name = "dailyLogId") // This creates the actual column in the DB
+    private DailyLog dailyLog;
+    
+    private String mealType;//Replace with Enums eventually?
+    private String mealName;//Automatically whatever the Enum is unless other is chosen or user chooses to rename meal.
+    private Double totalCalories;//Maybe calculate it on the fly?
     private LocalDate date;
     
     public Meal()
@@ -72,6 +76,16 @@ public class Meal
     public void setMealType(String mealType)
     {
         this.mealType = mealType;
+    }
+
+    public String getMealName()
+    {
+        return mealName;
+    }
+
+    public void setMealName(String mealName)
+    {
+        this.mealName = mealName;
     }
 
     public Double getTotalCalories()

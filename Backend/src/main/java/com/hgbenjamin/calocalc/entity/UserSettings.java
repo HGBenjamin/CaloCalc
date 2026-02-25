@@ -1,6 +1,8 @@
 package com.hgbenjamin.calocalc.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -14,7 +16,8 @@ public class UserSettings
 {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userSettingsId;
 
     @OneToOne
     @JoinColumn(name = "userId")

@@ -25,7 +25,7 @@ public class MealFood {
     
     private LocalTime mealTime;
     private Double quantity; // servings eaten
-    private Double mealCalories;
+    private Double mealCalories;// maybe calculate on the fly?
 
     public MealFood()
     {

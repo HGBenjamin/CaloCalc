@@ -1,7 +1,10 @@
 package com.hgbenjamin.calocalc.entity;
 
+import com.hgbenjamin.calocalc.enums.ActivityLevel;
+import com.hgbenjamin.calocalc.enums.Sex;
 import jakarta.persistence.*;
 import java.util.List;
+
 /**
  * Represents a database mapping of the user table.
  * 
@@ -22,7 +25,7 @@ public class User
     private String userName;
     
     @Column(nullable = false)
-    private String userPassword;
+    private String userPassword;// This value should be hashed
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Meal> meals;
@@ -31,7 +34,20 @@ public class User
     private String middleName;
     private String lastName;
     
+    private int age;
+    private double height;
+    private double weight;
     
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
+
+    @Enumerated(EnumType.STRING)
+    private ActivityLevel activityLevel;
+
+    private Integer dailyCalorieTarget;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<WeightLog> weightLogs;
     
     public User()
     {
@@ -117,4 +133,69 @@ public class User
     {
         this.lastName = lastName;
     }
+
+    public int getAge()
+    {
+        return age;
+    }
+
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+
+    public double getHeight()
+    {
+        return height;
+    }
+
+    public void setHeight(double height)
+    {
+        this.height = height;
+    }
+
+    public double getWeight()
+    {
+        return weight;
+    }
+
+    public void setWeight(double weight)
+    {
+        this.weight = weight;
+    }
+
+    public Sex getSex()
+    {
+        return sex;
+    }
+
+    public void setSex(Sex sex)
+    {
+        this.sex = sex;
+    }
+
+    public Double getActivityLevel()
+    {
+        return activityLevel.getActivityMultiplier();
+    }
+
+    public void setActivityLevel(ActivityLevel activityLevel)
+    {
+        this.activityLevel = activityLevel;
+    }
+
+    public Integer getDailyCalorieTarget()
+    {
+        return dailyCalorieTarget;
+    }
+
+    public void setDailyCalorieTarget(Integer dailyCalorieTarget)
+    {
+        this.dailyCalorieTarget = dailyCalorieTarget;
+    }
+
+    public List<WeightLog> getWeightLogs()
+    {
+        return weightLogs;
+    }    
 }
