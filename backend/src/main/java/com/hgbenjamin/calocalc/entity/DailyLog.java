@@ -17,8 +17,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
+ * Represents a daily_log record stored in the database.
  *
- * @author haivanbenjamin
+ * This entity maps to the "daily_log" table.
  */
 @Entity
 @Table(name = "daily_log")

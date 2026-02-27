@@ -4,8 +4,9 @@ import jakarta.persistence.*;
 import java.time.LocalTime;
 
 /**
+ * Represents a meal_food record stored in the database.
  *
- * @author Haivan Benjamin
+ * This entity maps to the "meal_food" table.
  */
 @Entity
 @Table(name = "meal_food")

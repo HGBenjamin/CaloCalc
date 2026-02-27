@@ -6,12 +6,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 /**
+ * Represents a user_settings record stored in the database.
  *
- * @author Haivan Benjamin
+ * This entity maps to the "user_settings" table.
  */
 @Entity
+@Table(name = "UserSettings")
 public class UserSettings 
 {
 

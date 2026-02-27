@@ -5,8 +5,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
+ * Represents a food record stored in the database.
  *
- * @author Haivan Benjamin
+ * This entity maps to the "food" table.
  */
 @Entity
 @Table(name = "food")

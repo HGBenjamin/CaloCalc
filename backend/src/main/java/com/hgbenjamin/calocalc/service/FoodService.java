@@ -1,8 +1,10 @@
 package com.hgbenjamin.calocalc.service;
 
 /**
- *
- * @author Haivan Benjamin
+ * This class is responsible for the business logic of the DailyLogs class. 
+ * 
+ * 
+ * @author haivanbenjamin
  */
 public class FoodService 
 {

@@ -6,9 +6,14 @@ import jakarta.persistence.*;
 import java.util.List;
 
 /**
- * Represents a database mapping of the user table.
- * 
- * @author Haivan Benjamin
+ * Represents a user record stored in the database.
+ *
+ * This entity maps to the "app_user" table and contains
+ * authentication and account metadata fields.
+ *
+ * Note:
+ * - Password is stored as a hash.
+ * - Role determines authorization level.
  */
 @Entity
 @Table(name = "app_user")

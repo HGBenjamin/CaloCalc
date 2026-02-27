@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This class is responsible for handling HTTP(S) requests for the Food entity.
+ * 
+ * @author haivanbenjamin
+ */
 @RestController
 @RequestMapping("/api/foods")
 public class FoodController {

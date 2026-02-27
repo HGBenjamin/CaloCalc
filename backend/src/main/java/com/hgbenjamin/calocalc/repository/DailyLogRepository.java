@@ -5,7 +5,8 @@
 package com.hgbenjamin.calocalc.repository;
 
 /**
- *
+ * This class handles CRUD operations for the DailyLog entity.
+ * 
  * @author haivanbenjamin
  */
 public class DailyLogRepository
