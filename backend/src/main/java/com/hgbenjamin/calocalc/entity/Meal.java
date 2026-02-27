@@ -9,6 +9,8 @@ import java.util.List;
  * Represents a meal record stored in the database.
  *
  * This entity maps to the "meal" table.
+ * 
+ * @author Haivan Benjamin
  */
 @Entity
 @Table(name = "meal")

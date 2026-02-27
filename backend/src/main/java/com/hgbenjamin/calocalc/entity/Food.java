@@ -8,6 +8,8 @@ import java.util.List;
  * Represents a food record stored in the database.
  *
  * This entity maps to the "food" table.
+ * 
+ * @author Haivan Benjamin
  */
 @Entity
 @Table(name = "food")

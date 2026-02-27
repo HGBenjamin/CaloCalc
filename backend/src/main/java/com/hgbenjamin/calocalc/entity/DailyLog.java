@@ -20,6 +20,8 @@ import java.util.List;
  * Represents a daily_log record stored in the database.
  *
  * This entity maps to the "daily_log" table.
+ * 
+ * @author Haivan Benjamin
  */
 @Entity
 @Table(name = "daily_log")

@@ -7,6 +7,8 @@ import java.time.LocalTime;
  * Represents a meal_food record stored in the database.
  *
  * This entity maps to the "meal_food" table.
+ * 
+ * @author Haivan Benjamin
  */
 @Entity
 @Table(name = "meal_food")

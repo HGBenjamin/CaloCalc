@@ -8,8 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * Entry point for the application.
  *
- * @author haivanbenjamin
+ * @author Haivan Benjamin
  */
 @SpringBootApplication
 public class CaloCalcApplication 

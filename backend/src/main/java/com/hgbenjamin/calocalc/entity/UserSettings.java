@@ -12,9 +12,11 @@ import jakarta.persistence.Table;
  * Represents a user_settings record stored in the database.
  *
  * This entity maps to the "user_settings" table.
+ * 
+ * @author Haivan Benjamin
  */
 @Entity
-@Table(name = "UserSettings")
+@Table(name = "user_settings")
 public class UserSettings 
 {
 

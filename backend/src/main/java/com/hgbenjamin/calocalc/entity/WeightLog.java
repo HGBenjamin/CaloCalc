@@ -8,7 +8,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 /**
+ * Represents a WeightLog record stored in the database.
  *
+ * This entity maps to the "user_settings" table.
  * @author Haivan Benjamin
  */
 @Entity

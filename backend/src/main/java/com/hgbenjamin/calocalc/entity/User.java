@@ -14,6 +14,8 @@ import java.util.List;
  * Note:
  * - Password is stored as a hash.
  * - Role determines authorization level.
+ * 
+ * @author Haivan Benjamin
  */
 @Entity
 @Table(name = "app_user")
