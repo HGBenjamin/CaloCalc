@@ -2,3 +2,4 @@
 /backend/.env
 /backend/target/
 /frontend/desktop/node_modules
+/backend/nbproject/
