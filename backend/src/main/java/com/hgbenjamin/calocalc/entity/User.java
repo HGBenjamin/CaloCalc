@@ -8,18 +8,15 @@ import java.util.List;
 /**
  * Represents a user record stored in the database.
  *
- * This entity maps to the "app_user" table and contains
- * authentication and account metadata fields.
+ * This entity maps to the "app_user" table and contains authentication and account metadata fields.
  *
- * Note:
- * - Password is stored as a hash.
- * - Role determines authorization level.
- * 
+ * Note: - Password is stored as a hash. - Role determines authorization level.
+ *
  * @author Haivan Benjamin
  */
 @Entity
 @Table(name = "app_user")
-public class User 
+public class User
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,24 +24,24 @@ public class User
 
     @Column(unique = true)
     private String userEmail;
-    
+
     @Column(nullable = false, unique = true)
     private String userName;
-    
+
     @Column(nullable = false)
     private String userPassword;// This value should be hashed
-    
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Meal> meals;
-    
+
     private String firstName;
     private String middleName;
     private String lastName;
-    
+
     private int age;
     private double height;
     private double weight;
-    
+
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
@@ -55,10 +52,17 @@ public class User
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<WeightLog> weightLogs;
-    
+
     public User()
     {
-        
+
+    }
+    
+    public User(String userName, String userEmail, String userPassword)
+    {
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
     }
 
     public Long getUserId()
@@ -204,5 +208,5 @@ public class User
     public List<WeightLog> getWeightLogs()
     {
         return weightLogs;
-    }    
+    }
 }
