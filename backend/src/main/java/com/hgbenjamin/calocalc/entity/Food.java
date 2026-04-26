@@ -1,6 +1,7 @@
 package com.hgbenjamin.calocalc.entity;
 
 import jakarta.persistence.*;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -218,5 +219,10 @@ public class Food
     public void setLastUpdated(LocalDate lastUpdated)
     {
         this.lastUpdated = lastUpdated;
+    }
+
+    public void setFetchedAt(Instant now)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
