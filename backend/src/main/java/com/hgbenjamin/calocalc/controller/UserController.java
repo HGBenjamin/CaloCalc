@@ -5,6 +5,7 @@
 package com.hgbenjamin.calocalc.controller;
 
 import com.hgbenjamin.calocalc.dto.UserDTO;
+import com.hgbenjamin.calocalc.entity.User;
 import com.hgbenjamin.calocalc.service.UserService;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -37,9 +38,15 @@ public class UserController
         return ResponseEntity.ok(userService.getUser(id));
     }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public ResponseEntity<List<UserDTO>> listUsers()
     {
         return ResponseEntity.ok(userService.getAllUsers());
+    }
+    
+    @GetMapping("/allUsersNoDTO")
+    public ResponseEntity<List<User>> listUsersNonDTO()
+    {
+        return ResponseEntity.ok(userService.getAllUsersNonDTO());
     }
 }

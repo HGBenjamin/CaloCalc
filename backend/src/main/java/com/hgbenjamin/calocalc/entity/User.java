@@ -1,5 +1,6 @@
 package com.hgbenjamin.calocalc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hgbenjamin.calocalc.enums.ActivityLevel;
 import com.hgbenjamin.calocalc.enums.Sex;
 import jakarta.persistence.*;
@@ -31,6 +32,7 @@ public class User
     @Column(nullable = false)
     private String userPassword;// This value should be hashed
 
+    //@JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Meal> meals;
 
@@ -42,14 +44,18 @@ public class User
     private double height;
     private double weight;
 
+    @JsonIgnore
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
+    @JsonIgnore
     @Enumerated(EnumType.STRING)
     private ActivityLevel activityLevel;
 
+    @JsonIgnore
     private Integer dailyCalorieTarget;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<WeightLog> weightLogs;
 

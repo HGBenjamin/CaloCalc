@@ -50,4 +50,9 @@ public class UserService
     {
         return userRepository.findAll().stream().map(this::toDTO).toList();
     }
+
+    public List<User> getAllUsersNonDTO()
+    {
+        return userRepository.findAll();
+    }
 }
