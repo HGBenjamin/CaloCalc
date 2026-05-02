@@ -4,12 +4,15 @@
  */
 package com.hgbenjamin.calocalc.repository;
 
+import com.hgbenjamin.calocalc.entity.UserSettings;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  * This class handles CRUD operations for the UserSettings entity.
  * 
  * @author haivanbenjamin
  */
-public class UserSettingsReposity
+public interface UserSettingsReposity extends JpaRepository<UserSettings, Long>
 {
     
 }
