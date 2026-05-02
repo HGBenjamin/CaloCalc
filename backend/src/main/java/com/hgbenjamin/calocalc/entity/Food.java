@@ -3,7 +3,6 @@ package com.hgbenjamin.calocalc.entity;
 import jakarta.persistence.*;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.util.List;
 
 /**
  * Represents a food record stored in the database.
@@ -26,10 +25,6 @@ public class Food
     @Column(nullable = false)
     private Double calories;
     
-    @OneToMany(mappedBy = "food")
-    private List<MealFood> mealFoods;
-    
-    
     private String brand;
     
     private Double servingSize;
@@ -39,39 +34,18 @@ public class Food
     
     //Fats
     private Double totalFat;
-    //private Double saturatedFat;
-    //private Double transFat;
-    //private Double polyunsaturatedFat;
-    //private Double monounsaturatedFat;
     
     //Carbs
     private Double totalCarbs;
-    //private Double dietaryFiber;
+    private Double dietaryFiber;
     private Double totalSugar;
-    //private Double addedSugar;
-    //private Double sugarAlcohols;
     
     //Minerals
-    //private Double calcium;
-    //private Double iron; // for future update
     private Double sodium;
     
-    //Vitimans For future updates :(
-    //private Double potassium;
-    //private Double vitaminA;
-    //private Double B1; // (thiamine)
-    //private Double B2; // (riboflavin)
-    //private Double B3; // (niacin)
-    //private Double B5; // (pantothenic acid)
-    //private Double B6;
-    //private Double B7; // (biotin)
-    //private Double B9; // (folate/folic acid)
-    //private Double B12;
-    //private Double vitaminC;
-    //private Double thiamine;
+    //Vitimans
     
-    //Others
-    //private Double caffeine;
+    //Others, like caffiene
     
     private boolean isUserMade;
     private LocalDate lastUpdated;
@@ -109,16 +83,6 @@ public class Food
     public void setCalories(Double calories)
     {
         this.calories = calories;
-    }
-
-    public List<MealFood> getMealFoods()
-    {
-        return mealFoods;
-    }
-
-    public void setMealFoods(List<MealFood> mealFoods)
-    {
-        this.mealFoods = mealFoods;
     }
 
     public String getBrand()

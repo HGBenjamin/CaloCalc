@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hgbenjamin.calocalc.enums.ActivityLevel;
 import com.hgbenjamin.calocalc.enums.Sex;
 import jakarta.persistence.*;
-import java.util.List;
 
 /**
  * Represents a user record stored in the database.
@@ -32,10 +31,6 @@ public class User
     @Column(nullable = false)
     private String userPassword;// This value should be hashed
 
-    //@JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Meal> meals;
-
     private String firstName;
     private String middleName;
     private String lastName;
@@ -54,10 +49,6 @@ public class User
 
     @JsonIgnore
     private Integer dailyCalorieTarget;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<WeightLog> weightLogs;
 
     public User()
     {
@@ -109,16 +100,6 @@ public class User
     public void setUserPassword(String userPassword)
     {
         this.userPassword = userPassword;
-    }
-
-    public List<Meal> getMeals()
-    {
-        return meals;
-    }
-
-    public void setMeals(List<Meal> meals)
-    {
-        this.meals = meals;
     }
 
     public String getFirstName()
@@ -209,10 +190,5 @@ public class User
     public void setDailyCalorieTarget(Integer dailyCalorieTarget)
     {
         this.dailyCalorieTarget = dailyCalorieTarget;
-    }
-
-    public List<WeightLog> getWeightLogs()
-    {
-        return weightLogs;
     }
 }
