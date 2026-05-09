@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * 
  * @author haivanbenjamin
  */
-public interface UserSettingsReposity extends JpaRepository<UserSettings, Long>
+public interface UserSettingsRepository extends JpaRepository<UserSettings, Long>
 {
     
 }
