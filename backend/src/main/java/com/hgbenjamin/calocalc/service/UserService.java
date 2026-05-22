@@ -4,7 +4,8 @@
  */
 package com.hgbenjamin.calocalc.service;
 
-import com.hgbenjamin.calocalc.dto.UserDTO;
+import com.hgbenjamin.calocalc.dto.CreateUserRequestDTO;
+import com.hgbenjamin.calocalc.dto.UserResponseDTO;
 import com.hgbenjamin.calocalc.entity.User;
 import com.hgbenjamin.calocalc.repository.UserRepository;
 import java.util.List;
@@ -25,28 +26,28 @@ public class UserService
     }
 
     // Convert User entity → DTO
-    public UserDTO toDTO(User user)
+    public UserResponseDTO toDTO(User user)
     {
-        return new UserDTO(user.getUserName(), user.getUserEmail());
+        return new UserResponseDTO(user.getEmail(), user.getUsername(), user.getFirstName(), user.getMiddleName(), user.getLastName(), user.getAge(), user.getHeight(), user.getHeight());
     }
 
     // Register new user (MVP: no password hashing yet)
-    public UserDTO registerUser(UserDTO dto)
+    public UserResponseDTO registerUser(CreateUserRequestDTO createUserRequestDTO)
     {
-        User user = new User(dto.getName(), dto.getEmail(), dto.getPassword());
+        User user = new User(createUserRequestDTO.getEmail(), createUserRequestDTO.getUsername(), createUserRequestDTO.getPassword(), createUserRequestDTO.getFirstName(), createUserRequestDTO.getMiddleName(), createUserRequestDTO.getLastName(), createUserRequestDTO.getAge(), createUserRequestDTO.getHeight(), createUserRequestDTO.getHeight());
         userRepository.save(user);
         return toDTO(user);
     }
 
     // Get user by ID
-    public UserDTO getUser(Long id)
+    public UserResponseDTO getUser(Long id)
     {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
         return toDTO(user);
     }
 
     // List all users (optional)
-    public List<UserDTO> getAllUsers()
+    public List<UserResponseDTO> getAllUsers()
     {
         return userRepository.findAll().stream().map(this::toDTO).toList();
     }

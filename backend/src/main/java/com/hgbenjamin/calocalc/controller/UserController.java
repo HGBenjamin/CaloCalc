@@ -4,7 +4,8 @@
  */
 package com.hgbenjamin.calocalc.controller;
 
-import com.hgbenjamin.calocalc.dto.UserDTO;
+import com.hgbenjamin.calocalc.dto.CreateUserRequestDTO;
+import com.hgbenjamin.calocalc.dto.UserResponseDTO;
 import com.hgbenjamin.calocalc.entity.User;
 import com.hgbenjamin.calocalc.service.UserService;
 import java.util.List;
@@ -27,19 +28,19 @@ public class UserController
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> register(@RequestBody UserDTO dto)
+    public ResponseEntity<UserResponseDTO> register(@RequestBody CreateUserRequestDTO dto)
     {
         return ResponseEntity.ok(userService.registerUser(dto));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDTO> getUser(@PathVariable Long id)
+    public ResponseEntity<UserResponseDTO> getUser(@PathVariable Long id)
     {
         return ResponseEntity.ok(userService.getUser(id));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<UserDTO>> listUsers()
+    public ResponseEntity<List<UserResponseDTO>> listUsers()
     {
         return ResponseEntity.ok(userService.getAllUsers());
     }

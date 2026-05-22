@@ -1,8 +1,5 @@
 package com.hgbenjamin.calocalc.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.hgbenjamin.calocalc.enums.ActivityLevel;
-import com.hgbenjamin.calocalc.enums.Sex;
 import jakarta.persistence.*;
 
 /**
@@ -22,44 +19,48 @@ public class User
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(unique = true)
-    private String userEmail;
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @Column(nullable = false, unique = true)
-    private String userName;
+    private String username;
 
     @Column(nullable = false)
-    private String userPassword;// This value should be hashed
+    private String password;// This value should be hashed
 
+    @Column(nullable = false)
     private String firstName;
+    
     private String middleName;
+    
+    @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false)
     private int age;
+    
+    @Column(nullable = false)
     private double height;
+    
+    @Column(nullable = false)
     private double weight;
-
-    @JsonIgnore
-    @Enumerated(EnumType.STRING)
-    private Sex sex;
-
-    @JsonIgnore
-    @Enumerated(EnumType.STRING)
-    private ActivityLevel activityLevel;
-
-    @JsonIgnore
-    private Integer dailyCalorieTarget;
-
+    
     public User()
     {
-
+        
     }
     
-    public User(String userName, String userEmail, String userPassword)
+    public User(String email, String username, String password, String firstName, String middleName, String lastName, int age, double height, double weight)
     {
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
     }
 
     public Long getUserId()
@@ -72,34 +73,34 @@ public class User
         this.userId = userId;
     }
 
-    public String getUserEmail()
+    public String getEmail()
     {
-        return userEmail;
+        return email;
     }
 
-    public void setUserEmail(String userEmail)
+    public void setEmail(String userEmail)
     {
-        this.userEmail = userEmail;
+        this.email = userEmail;
     }
 
-    public String getUserName()
+    public String getUsername()
     {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName)
+    public void setUsername(String username)
     {
-        this.userName = userName;
+        this.username = username;
     }
 
-    public String getUserPassword()
+    public String getPassword()
     {
-        return userPassword;
+        return password;
     }
 
-    public void setUserPassword(String userPassword)
+    public void setPassword(String userPassword)
     {
-        this.userPassword = userPassword;
+        this.password = userPassword;
     }
 
     public String getFirstName()
@@ -160,35 +161,5 @@ public class User
     public void setWeight(double weight)
     {
         this.weight = weight;
-    }
-
-    public Sex getSex()
-    {
-        return sex;
-    }
-
-    public void setSex(Sex sex)
-    {
-        this.sex = sex;
-    }
-
-    public Double getActivityLevel()
-    {
-        return activityLevel.getActivityMultiplier();
-    }
-
-    public void setActivityLevel(ActivityLevel activityLevel)
-    {
-        this.activityLevel = activityLevel;
-    }
-
-    public Integer getDailyCalorieTarget()
-    {
-        return dailyCalorieTarget;
-    }
-
-    public void setDailyCalorieTarget(Integer dailyCalorieTarget)
-    {
-        this.dailyCalorieTarget = dailyCalorieTarget;
     }
 }
